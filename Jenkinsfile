@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout code') {
+    stage('Run unit tests') {
       steps {
-        git(url: 'https://github.com/KristoGodari/continuous-delivery-test-project.git', branch: 'master', changelog: true, poll: true)
+        sh 'mvn clean install'
       }
     }
   }
